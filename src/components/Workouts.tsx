@@ -1,19 +1,4 @@
-import React, { useState } from "react";
-
-
-
-const exercises = [
-  "Push-ups",
-  "Sit-ups",
-  "Squats",
-  "Lunges",
-  "Burpees",
-  "Jumping jacks",
-  "Plank",
-  "Mountain climbers",
-  "High knees",
-  "Jump squats",
-];
+import { useState } from "react";
 
 
 interface WorkoutsProps {
@@ -25,7 +10,7 @@ interface WorkoutsProps {
 const Workouts = ({ exercises, onSelect}: WorkoutsProps) => {
     const [selectedExercise, setSelectedExercise] = useState("");
 
-    const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleSelect = (event: any) => {
         const exercise = event.target.value;
         setSelectedExercise(exercise);
         onSelect(exercise)
@@ -36,14 +21,21 @@ const Workouts = ({ exercises, onSelect}: WorkoutsProps) => {
         <div>
             <label 
                 htmlFor="exercise-select">Select an Exercise</label>
-            <select 
+        <select 
             id="exercise-select"
             value={selectedExercise}
             onChange={handleSelect}>
-            </select>
+            
 
-        </div>
-    )
+            {exercises.map((exercise) => (
+          <option key={exercise} value={exercise}>
+            {exercise}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
 };
+
 
 export default Workouts;
