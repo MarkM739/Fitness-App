@@ -6,11 +6,12 @@ import Workouts from './components/Workouts'
 import Profile from './components/Profile'
 
 function App() {
+  const [selectedExercise, setSelectedExercise] = useState("");
   
 
   return (
     <div>
-      <Workouts></Workouts>
+      <Workouts>exercises={exercises} onSelect={handleExerciseSelect}</Workouts>
       <Profile></Profile>
     </div>
   )
