@@ -12,7 +12,7 @@ const exercises = [
 ];
 
 function App() {
-  const [selectedExercise, setSelectedExercise] = React.useState(exercises);
+  const [selectedExercise, setSelectedExercise] = useState("");
 
   const handleExerciseSelect = (exercise: string) => {
     setSelectedExercise(exercise);
