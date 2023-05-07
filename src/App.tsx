@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './App.css'
 import Workouts from './components/Workouts'
-import Profile from './components/Profile'
+
 
 const exercises = [
   "Push-ups",
@@ -21,8 +21,8 @@ function App() {
 
   return (
     <div>
-      <Workouts exercises={exercises} onSelect={handleExerciseSelect} />
-      <Profile></Profile>
+      <Workouts exercises={exercises} onSelect={handleExerciseSelect} selectedExercise={selectedExercise} />
+      
     </div>
   )
     
