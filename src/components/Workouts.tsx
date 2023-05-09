@@ -31,5 +31,5 @@ const Workouts = ({ exercises, onSelect, selectedExercise}: WorkoutsProps) => {
 };
 
 
-export default Workouts;
+export default Workouts; 
 
