@@ -12,6 +12,7 @@ const exercises = [
   "Burpees",
 ];
 
+
 function App() {
   const [selectedExercise, setSelectedExercise] = useState("");
 
