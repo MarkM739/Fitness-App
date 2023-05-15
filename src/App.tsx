@@ -2,6 +2,7 @@ import { useState } from "react";
 import './App.css'
 import Workouts from './components/Workouts'
 import Profile from "./components/Profile";
+import Navbar from "./components/Navbar";
 
 
 const exercises = [
@@ -25,6 +26,7 @@ function App() {
     <div>
       <Workouts exercises={exercises} onSelect={handleExerciseSelect} selectedExercise={selectedExercise} />
       <Profile></Profile>
+      <Navbar></Navbar>
     </div>
   )
     

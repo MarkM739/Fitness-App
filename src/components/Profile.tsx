@@ -7,6 +7,7 @@ interface UserData {
     weight: number;
   }
 
+
 const Profile: React.FC = () => {
     const [age, setAge] = useState<number>(0);
     const [height, setHeight] = useState<number>(0);
@@ -37,6 +38,8 @@ const Profile: React.FC = () => {
         setHeight(0);
         setWeight(0);
       };
+
+      
     
       return (
         <div>
