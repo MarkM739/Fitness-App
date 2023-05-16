@@ -52,6 +52,7 @@ function App() {
       <Navbar></Navbar>
     </div>
     </div>
+    
   );
     
    
