@@ -49,6 +49,8 @@ const Workouts = ({ exercises, onSelect }: WorkoutsProps) => {
   );
 };
 
+
+
 export default Workouts;
 
 

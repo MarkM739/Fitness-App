@@ -4,6 +4,7 @@ import Workouts from './components/Workouts'
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import BodyMeasurementsForm from "./components/BodyMeasurementsForm";
 
 
 const exercises = [
@@ -21,37 +22,24 @@ function App() {
   const handleExerciseSelect = (exercise: string) => {
     setSelectedExercise(exercise);
   };
+
+  const handleMeasurementsSubmit = (measurements: BodyMeasurements) => {
+    // Handle the submitted measurements, e.g., send them to an API or update the app's state.
+    console.log(measurements);
+  };
+
   
 
   return (
-<div>
-  <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/workouts">Workouts</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-        </ul>
-      </nav>
 
-      <Route path="/" exact component={Home} />
-      <Route path="/workouts" component={Workouts} />
-      <Route path="/profile" component={Profile} />
-  </div>
-</Router>
     <div>
       <Workouts exercises={exercises} onSelect={handleExerciseSelect} selectedExercise={selectedExercise} />
       <Profile></Profile>
       <Navbar></Navbar>
+      <BodyMeasurementsForm onSubmit={handleMeasurementsSubmit} />
+    
     </div>
-    </div>
+    
     
   );
     

@@ -11,6 +11,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <li className="mx-2"><a className="text-white hover:text-gray-300" href="/">Home</a></li>
       <li className="mx-2"><a className="text-white hover:text-gray-300" href="/about">Workout</a></li>
       <li className="mx-2"><a className="text-white hover:text-gray-300" href="/contact">Profile</a></li>
+      <li className="mx-2"><a className="text-white hover:text-gray-300" href="/contact">Measurements</a></li>
     </ul>
   </nav>
 );
