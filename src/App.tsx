@@ -5,6 +5,7 @@ import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import BodyMeasurementsForm from "./components/BodyMeasurementsForm";
+import Routines from "./components/WorkoutRoutines";
 
 
 const exercises = [
@@ -37,6 +38,7 @@ function App() {
       <Profile></Profile>
       <Navbar></Navbar>
       <BodyMeasurementsForm onSubmit={handleMeasurementsSubmit} />
+      <Routines></Routines>
     
     </div>
     

@@ -13,6 +13,7 @@ interface BodyMeasurementsFormProps {
   onSubmit: (measurements: BodyMeasurements) => void;
 }
 
+//TODO add submit button and SAVE data
 const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit }) => {
   const [date, setDate] = useState<Date>(new Date());
   const [weight, setWeight] = useState<number>(0);
@@ -33,7 +34,7 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
     };
     onSubmit(measurements);
   };
-
+//TODO Build loop to show differences in measurements each time submit is hit**
   return (
     <form onSubmit={handleSubmit}>
       <label>Date:</label>
