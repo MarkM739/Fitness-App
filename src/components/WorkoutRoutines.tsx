@@ -9,7 +9,7 @@ const WorkoutRoutines: React.FC<WorkoutRoutinesProps> = () => {
     const workoutRoutines = [
         {
             id: 1,
-            name: 'Chest Routine',
+            name: 'Chest Routine 1',
             exercises: ['Bench Press', 'Incline Dumbbell Press', 'Chest Flyes'],
         }
     ]
@@ -18,4 +18,4 @@ const WorkoutRoutines: React.FC<WorkoutRoutinesProps> = () => {
     )
 }
 
-export default Routines;
+export default WorkoutRoutines;

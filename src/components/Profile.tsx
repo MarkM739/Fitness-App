@@ -1,4 +1,5 @@
 import ChangeEvent, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 interface UserData {
@@ -9,6 +10,10 @@ interface UserData {
 
 
 const Profile: React.FC = () => {
+    const { userId } = useParams();
+
+    console.log(userId)
+
     const [age, setAge] = useState<number>(0);
     const [height, setHeight] = useState<number>(0);
     const [weight, setWeight] = useState<number>(0);

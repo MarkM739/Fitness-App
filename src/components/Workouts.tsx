@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 interface WorkoutsProps {
-  exercises: string[];
-  onSelect: (exercise: string) => void;
+  exercises?: string[];
+  onSelect?: (exercise: string) => void; 
 }
 
 const Workouts = ({ exercises, onSelect }: WorkoutsProps) => {
+  const exercises1 = useLoaderData() as string[];
+
   const [selectedExercises, setSelectedExercises] = useState<string[]>([]);
   const [showWorkoutList, setShowWorkoutList] = useState(false);
 
   const handleAddExercise = () => {
-    if (!selectedExercises.includes(onSelect)) {
-      setSelectedExercises([...selectedExercises, onSelect]);
+    //@ts-ignore
+    if (!selectedExercises.includes(onSelect)) { 
+      //@ts-ignore
+      setSelectedExercises([...selectedExercises, onSelect]); 
     }
   };
 
@@ -25,9 +30,9 @@ const Workouts = ({ exercises, onSelect }: WorkoutsProps) => {
       <select
         id="exercise-select"
         value={"" || selectedExercises}
-        onChange={(e) => onSelect(e.target.value)}
+        onChange={(e) => onSelect?.(e.target.value)}
       >
-        {exercises.map((exercise) => (
+        {exercises1.map((exercise) => (
           <option key={exercise} value={exercise}>
             {exercise}
           </option>
