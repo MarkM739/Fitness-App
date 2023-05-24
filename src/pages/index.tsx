@@ -9,6 +9,9 @@ const IndexPage = () => {
             <Outlet />
         </>
     )
+
+    
 }
 
 export default IndexPage;
+

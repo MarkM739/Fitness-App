@@ -63,4 +63,52 @@ function App() {
   );
 }
 
+// return (
+//   <Router>
+//     <div>
+//       <nav>
+//         <ul>
+//           <li>
+//             <Link href="/">Home</Link>
+//           </li>
+//           <li>
+//             <Link href="/profile/123">Profile</Link>
+//           </li>
+//           <li>
+//             <Link href="/workouts">Workouts</Link>
+//           </li>
+//           <li>
+//             <Link href="/measurements">Measurements</Link>
+//           </li>
+//           <li>
+//             <Link href="/routines">Routines</Link>
+//           </li>
+//         </ul>
+//       </nav>
+
+//       <Route path="/">
+//         <IndexPage />
+//       </Route>
+
+//       <Route path="/profile/:userId">
+//         <Profile />
+//       </Route>
+
+//       <Route path="/workouts">
+//         <Workouts />
+//       </Route>
+
+//       <Route path="/measurements">
+//         <div>Body Measurements</div>
+//       </Route>
+
+//       <Route path="/routines">
+//         <Routines />
+//       </Route>
+//     </div>
+//   </Router>
+// );
+// };
+
+
 export default App;
