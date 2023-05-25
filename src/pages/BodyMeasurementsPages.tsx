@@ -2,7 +2,7 @@ import BodyMeasurementsForm from "../components/BodyMeasurementsForm";
 
 
 const BodyMeasurementsPage = () =>{
-    //@ts-ignore
+   //@ts-ignore
     const handleMeasurementsSubmit = (measurements: BodyMeasurements) => {
         
     };

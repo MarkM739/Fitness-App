@@ -13,13 +13,18 @@ const Workouts = ({ exercises, onSelect }: WorkoutsProps) => {
   const [showWorkoutList, setShowWorkoutList] = useState(false);
 
   const handleAddExercise = () => {
-    //@ts-ignore
-    if (!selectedExercises.includes(onSelect)) { 
+      //@ts-ignore
+    if (selectedExercises.includes(onSelect)) { 
       //@ts-ignore
       setSelectedExercises([...selectedExercises, onSelect]); 
     }
   };
+  const [selectedExercise, setSelectedExercise] = useState("");
 
+  const handleExerciseSelect = (exercise: string) => {
+    setSelectedExercise(exercise);
+  
+  };
   const handleShowWorkoutList = () => {
     setShowWorkoutList(!showWorkoutList);
   };

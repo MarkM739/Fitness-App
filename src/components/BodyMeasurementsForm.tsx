@@ -17,7 +17,7 @@ interface BodyMeasurementsFormProps {
 //TODO add submit button and SAVE data
 const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit }) => {
   const [date, setDate] = useState<Date>(new Date());
-  const [weight, setWeight] = useState<number>(0);
+  const [weight, setWeight] = useState<number | undefined>(0);
   const [height, setHeight] = useState<number>(0);
   const [chest, setChest] = useState<number>(0);
   const [waist, setWaist] = useState<number>(0);
@@ -27,14 +27,23 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
     e.preventDefault();
     const measurements: BodyMeasurements = {
       date,
-      weight,
+      weight: weight as number,
       height,
       chest,
       waist,
       hips,
     };
     onSubmit(measurements);
+    console.log('submitted')
   };
+
+  //TODO Use this in all your onChange() functions
+  //TODO Update to check for empty string, if so then return undefined, else return the number
+  const handleNumberInput = (text: string) => {
+    // if (text === '')
+    console.log(text)
+  }
+
 //TODO Build loop to show differences in measurements each time submit is hit**
   return (
     <form onSubmit={handleSubmit}>
@@ -42,7 +51,7 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
       <input type="date" value={date.toISOString().slice(0, 10)} onChange={(e) => setDate(new Date(e.target.value))} />
 
       <label>Weight (kg):</label>
-      <input type="number" value={weight} onChange={(e) => setWeight(Number(e.target.value))} />
+      <input type="number" value={weight} onChange={(e) => handleNumberInput(e.target.value)} />
 
       <label>Height (cm):</label>
       <input type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
