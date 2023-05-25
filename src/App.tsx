@@ -1,15 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import Workouts from "./components/Workouts";
-import Profile from "./components/Profile";
-import Navbar from "./components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BodyMeasurementsForm from "./components/BodyMeasurementsForm";
 import Routines from "./components/WorkoutRoutines";
-import WorkoutRoutines from "./components/WorkoutRoutines";
 import IndexPage from "./pages/index";
 import { workoutLoader } from "./loaders/workoutLoader";
 import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
+import ProfilePage from "./pages/ProfilePage"
 
 
 
@@ -35,7 +32,7 @@ function App() {
         children: [
         
         {path: "/profile/:userId",
-          element: <Profile />,
+          element: <ProfilePage />,
         },
         
          {path: "/workouts",
