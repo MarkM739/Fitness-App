@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BodyMeasurementsPage from '../pages/BodyMeasurementsPages';
 
 interface BodyMeasurements {
   date: Date;

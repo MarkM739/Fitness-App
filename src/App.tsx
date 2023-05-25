@@ -9,8 +9,9 @@ import Routines from "./components/WorkoutRoutines";
 import WorkoutRoutines from "./components/WorkoutRoutines";
 import IndexPage from "./pages/index";
 import { workoutLoader } from "./loaders/workoutLoader";
+import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 
-const exercises = ["Push-ups", "Sit-ups", "Squats", "Lunges", "Burpees"];
+
 
 function App() {
   const [selectedExercise, setSelectedExercise] = useState("");
@@ -27,22 +28,25 @@ function App() {
   };
 
   const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <IndexPage />,
-      errorElement: <div>This page doesn't exist</div>,
-      children: [
-        {
-          path: "/profile/:userId",
+    
+        {path: "/",
+        element: <IndexPage />,
+        errorElement: <div>This page doesn't exist</div>,
+        children: [
+        
+        {path: "/profile/:userId",
           element: <Profile />,
         },
-        {
-          path: "/workouts",
+        
+         {path: "/workouts",
           element: <Workouts/>,
           loader: workoutLoader
         },
-        { path: "/measurements", element: <div>Body mesasurements</div> },
-        { path: "/routines", element: <Routines /> },
+          {path: "/measurements", 
+        element: <BodyMeasurementsPage/> },
+
+          {path: "/routines",
+         element: <Routines /> },
       ],
     },
   ]);
@@ -63,52 +67,6 @@ function App() {
   );
 }
 
-// return (
-//   <Router>
-//     <div>
-//       <nav>
-//         <ul>
-//           <li>
-//             <Link href="/">Home</Link>
-//           </li>
-//           <li>
-//             <Link href="/profile/123">Profile</Link>
-//           </li>
-//           <li>
-//             <Link href="/workouts">Workouts</Link>
-//           </li>
-//           <li>
-//             <Link href="/measurements">Measurements</Link>
-//           </li>
-//           <li>
-//             <Link href="/routines">Routines</Link>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       <Route path="/">
-//         <IndexPage />
-//       </Route>
-
-//       <Route path="/profile/:userId">
-//         <Profile />
-//       </Route>
-
-//       <Route path="/workouts">
-//         <Workouts />
-//       </Route>
-
-//       <Route path="/measurements">
-//         <div>Body Measurements</div>
-//       </Route>
-
-//       <Route path="/routines">
-//         <Routines />
-//       </Route>
-//     </div>
-//   </Router>
-// );
-// };
 
 
 export default App;
