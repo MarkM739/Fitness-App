@@ -43,10 +43,6 @@ const Profile: React.FC = () => {
         setHeight(0);
         setWeight(0);
       };
-
-      
-
-      
     
       return (
         <div>
