@@ -4,8 +4,13 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
+  theme: {
+    extend: {}
+  },
+
   daisyui: {
-    themes: ['retro'],
+    themes: ['coffee', 'pastel'],
   },
   plugins: [require("daisyui")],
 }
