@@ -12,10 +12,10 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   <div className="navbar bg-base-100">
     <div className="flex-1">
-      <a className="btn btn-ghost normal-case text-xl">BODi</a>
+      <a className="btn btn-ghost normal-case text-5xl">BODi</a>
     </div>
     <nav className="">
-    <ul className="flex justify-center">
+    <ul className="flex justify-center menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
       <li className="mx-2"><Link to="/">Home</Link></li>
       <li className="mx-2"><Link to="/workouts">Workouts</Link></li>
       <li className="mx-2"><Link to="/profile">Profile</Link></li>

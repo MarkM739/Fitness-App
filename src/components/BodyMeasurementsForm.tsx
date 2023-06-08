@@ -44,28 +44,28 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
     console.log(text)
   }
 
-//TODO Build loop to show differences in measurements each time submit is hit**
+//Can you change the font size of a label? If so how....
   return (
     <form onSubmit={handleSubmit}>
-      <label>Date:</label>
+      <label>Date</label>
       <input type="date" value={date.toISOString().slice(0, 10)} onChange={(e) => setDate(new Date(e.target.value))} />
 
       <label>Weight (kg):</label>
-      <input type="number" value={weight} onChange={(e) => handleNumberInput(e.target.value)} />
+      <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={weight} onChange={(e) => handleNumberInput(e.target.value)} />
 
       <label>Height (cm):</label>
-      <input type="number" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
+      <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
 
       <label>Chest (cm):</label>
-      <input type="number" value={chest} onChange={(e) => setChest(Number(e.target.value))} />
+      <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={chest} onChange={(e) => setChest(Number(e.target.value))} />
 
       <label>Waist (cm):</label>
-      <input type="number" value={waist} onChange={(e) => setWaist(Number(e.target.value))} />
+      <input type="number"className="input input-bordered input-primary w-full max-w-xs" value={waist} onChange={(e) => setWaist(Number(e.target.value))} />
 
       <label>Hips (cm):</label>
-      <input type="number" value={hips} onChange={(e) => setHips(Number(e.target.value))} />
+      <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={hips} onChange={(e) => setHips(Number(e.target.value))} />
 
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn btn-secondary">Submit</button>
     </form>
   );
 };

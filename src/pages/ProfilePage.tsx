@@ -47,19 +47,19 @@ const Profile: React.FC = () => {
       return (
         <div>
           <form onSubmit={handleSubmit}>
-            <label>
+            <label className="text-xl">
               Age:
-              <input type="number" value={age} onChange={handleAgeChange} />
+              <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={age} onChange={handleAgeChange} />
             </label>
-            <label>
+            <label className="text-xl">
               Height:
-              <input type="number" value={height} onChange={handleHeightChange} />
+              <input type="number"className="input input-bordered input-primary w-full max-w-xs" value={height} onChange={handleHeightChange} />
             </label>
-            <label>
+            <label className="text-xl">
               Weight:
-              <input type="number" value={weight} onChange={handleWeightChange} />
+              <input type="number" className="input input-bordered input-primary w-full max-w-xs" value={weight} onChange={handleWeightChange} />
             </label>
-            <button type="submit">Submit</button>
+            <button type="submit" className="btn btn-warning">Submit</button>
           </form>
           <div>
             {userData.map((data, index) => (

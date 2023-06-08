@@ -2,8 +2,8 @@ import React from "react";
 //@ts-ignore
 export default function Swap (props) {
     return (
-    
-<label className="swap swap-rotate">
+    //my x-0 isnt moving the x-axis when changing the value: absolute inset-x-0 top-0 h-16 ...
+<label className="swap swap-rotate" > 
     
     <input type="checkbox" onClick= {props.toggleDarkMode} />
     

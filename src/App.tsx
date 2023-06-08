@@ -8,6 +8,7 @@ import { workoutLoader } from "./loaders/workoutLoader";
 import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 import ProfilePage from "./pages/ProfilePage";
 import Swap from "./components/Swap";
+import Homepage from "./pages/Homepage";
 
 
 
@@ -28,9 +29,10 @@ function App() {
     {
       path: "/",
       element: <IndexPage />,
-      errorElement: <div>This page doesn't exist</div>,
+      errorElement: <div></div>,
       children: [
-        { path: "/profile/:userId", element: <ProfilePage /> },
+        { path: "/", element: <Homepage/> },
+        { path: "/profile/", element: <ProfilePage /> },
         { path: "/workouts", element: <Workouts />, loader: workoutLoader },
         { path: "/measurements", element: <BodyMeasurementsPage /> },
         { path: "/routines", element: <Routines /> },
