@@ -44,7 +44,7 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
     console.log(text)
   }
 
-//Can you change the font size of a label? If so how....
+//Look up how to space these properly 
   return (
     <form onSubmit={handleSubmit}>
       <label>Date</label>
