@@ -6,6 +6,7 @@ import { workoutLoader } from "./loaders/workoutLoader";
 import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 import ProfilePage from "./pages/ProfilePage";
 import Homepage from "./pages/Homepage";
+import SignupLogin from "./pages/SignupLogin";
 
 function App() {
   //TODO Add typing
@@ -22,10 +23,11 @@ function App() {
       errorElement: <div></div>,
       children: [
         { path: "/", element: <Homepage /> },
-        { path: "/profile/", element: <ProfilePage /> },
+        { path: "/profile", element: <ProfilePage /> },
         { path: "/workouts", element: <Workouts />, loader: workoutLoader },
         { path: "/measurements", element: <BodyMeasurementsPage /> },
         { path: "/routines", element: <Routines /> },
+        { path: "/login", element: <SignupLogin />},
       ],
     },
   ]);

@@ -29,8 +29,9 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Swap toggleDarkMode={toggleDarkMode}/>
       <li className="mx-2"><Link to="/">Home</Link></li>
       <li className="mx-2"><Link to="/workouts">Workouts</Link></li>
-      <li className="mx-2"><Link to="/profile">Profile</Link></li>
       <li className="mx-2"><Link to="/measurements">Measurements</Link></li>
+      <li className="mx-2"><Link to="/profile">Profile</Link></li>
+      <li className='mx-2'><Link to ="/login">Login</Link></li>
     </ul>
   </nav>
   </div>
