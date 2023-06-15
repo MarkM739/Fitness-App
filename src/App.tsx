@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Workouts from "./components/Workouts";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Routines from "./components/WorkoutRoutines";
@@ -7,8 +8,12 @@ import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 import ProfilePage from "./pages/ProfilePage";
 import Homepage from "./pages/Homepage";
 import SignupLogin from "./pages/SignupLogin";
+import { UserContext } from "./contexts/UserContext";
+import { User } from './types'
 
 function App() {
+  const [currentUser, setCurrentUser] = useState<User | undefined>()
+
   //TODO Add typing
   //@ts-ignore
   const handleMeasurementsSubmit = (measurements: BodyMeasurements) => {
@@ -34,7 +39,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <UserContext.Provider value={[currentUser, setCurrentUser]}>
+        <RouterProvider router={router} />
+      </UserContext.Provider>
     </>
   );
 }
