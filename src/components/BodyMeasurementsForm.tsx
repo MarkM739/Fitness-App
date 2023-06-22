@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
+import { BodyMeasurement } from '../types';
 
-
-interface BodyMeasurements {
-  date: Date;
-  weight: number;
-  height: number;
-  chest: number;
-  waist: number;
-  hips: number;
-}
 
 interface BodyMeasurementsFormProps {
-  onSubmit: (measurements: BodyMeasurements) => void;
+  onSubmit: (date: Date, measurements: BodyMeasurement) => void;
 }
 
 //TODO add submit button and SAVE data
@@ -25,15 +17,14 @@ const BodyMeasurementsForm: React.FC<BodyMeasurementsFormProps> = ({ onSubmit })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const measurements: BodyMeasurements = {
-      date,
+    const measurements: BodyMeasurement = {
       weight: weight as number,
       height,
       chest,
       waist,
       hips,
     };
-    onSubmit(measurements);
+    onSubmit(date, measurements);
     console.log('submitted')
   };
 

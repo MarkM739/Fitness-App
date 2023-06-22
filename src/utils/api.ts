@@ -9,7 +9,11 @@ export function createUser(username: string, password: string): User {
     return newUser as User
 }
 
-export function signIn(username: string, password: string): User {
+
+
+
+
+export function signIn(username: string, password: string): User | undefined {
     
 }
 
