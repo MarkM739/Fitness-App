@@ -7,6 +7,7 @@ type User = {
   password: string;
 };
 
+
 const SignupLogin: React.FC = () => {
   const [currentUser, setCurrentUser] = useContext(UserContext);
 

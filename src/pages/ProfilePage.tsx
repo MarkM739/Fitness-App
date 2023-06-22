@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
+
 interface UserData {
   id?: string;    // TODO: Make this required
   name?: string;  // TODO: Same here
@@ -8,6 +9,7 @@ interface UserData {
   height: number;
   weight: number;
 }
+
 
 const testUsers = [
   {
