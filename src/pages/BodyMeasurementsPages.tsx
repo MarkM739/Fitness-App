@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import BodyMeasurementsForm from "../components/BodyMeasurementsForm";
 import { UserContext } from "../contexts/UserContext";
 
@@ -24,6 +24,12 @@ const BodyMeasurementsPage = () =>{
             }
         })
      };
+
+     useEffect(() => {
+        if (currentUser) {
+          localStorage.setItem("user", JSON.stringify(currentUser));
+        }
+      }, [currentUser]);
 
     console.log(`userContext: ${JSON.stringify(currentUser)}`);
 
