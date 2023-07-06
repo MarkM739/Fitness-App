@@ -47,3 +47,20 @@ function App() {
 }
 
 export default App;
+
+
+//TODO Create Read me page github
+
+//TODO Load in workouts in all workout pages
+
+//TODO Style and flexbox each page to make sense for user experience 
+
+//TODO Fix measurements page too add correctly 
+
+//TODO Get a circular graph to track measurements (not sure what would work best yet)
+
+//TODO Timer to start and end workout sessions
+
+//TODO get the user to xfer data per component -- local storage setCurrentUser, updateUser
+
+//Bonus: integrate fitbit API to app...Mostly showing for reactnative in examples??
