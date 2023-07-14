@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import React, { useState } from "react";
+import { useUser, useUserDispatch } from "../hooks/user";
 import * as api from "../utils/api";
 
 type User = {
@@ -9,7 +9,8 @@ type User = {
 
 
 const SignupLogin: React.FC = () => {
-  const [currentUser, setCurrentUser] = useContext(UserContext);
+  const currentUser = useUser();
+  const userDispatch = useUserDispatch();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -17,8 +18,24 @@ const SignupLogin: React.FC = () => {
   const handleSignup = () => {
     const user = api.createUser(username, password)
 
-    setCurrentUser(user);
+    userDispatch({
+      type: 'login',
+      user: user
+    })
   };
+
+
+  const handleLogin = () => {
+    const user = api.login(username, password)
+
+    if (!user) {
+      console.log('user doesnt exist')
+      return
+    }
+
+    //userDispatch()
+  }
+
 
   console.log(`userContext: ${JSON.stringify(currentUser)}`);
 

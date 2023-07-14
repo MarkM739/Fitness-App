@@ -1,18 +1,16 @@
-import { useState } from 'react';
 import Workouts from "./components/Workouts";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Routines from "./components/WorkoutRoutines";
+import UserProvider from './components/providers/UserProvider';
 import IndexPage from "./pages/index";
 import { workoutLoader } from "./loaders/workoutLoader";
 import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 import ProfilePage from "./pages/ProfilePage";
 import Homepage from "./pages/Homepage";
 import SignupLogin from "./pages/SignupLogin";
-import { UserContext } from "./contexts/UserContext";
-import { User } from './types'
+
 
 function App() {
-  const [currentUser, setCurrentUser] = useState<User | undefined>()
 
   //TODO Add typing
   //@ts-ignore
@@ -39,9 +37,9 @@ function App() {
 
   return (
     <>
-      <UserContext.Provider value={[currentUser, setCurrentUser]}>
+      <UserProvider>
         <RouterProvider router={router} />
-      </UserContext.Provider>
+      </UserProvider>
     </>
   );
 }
@@ -60,5 +58,11 @@ export default App;
 //TODO Timer to start and end workout sessions
 
 //TODO get the user to xfer data per component -- local storage setCurrentUser, updateUser
+
+//TODO Split sign-in and log-in components and make seperate pages.
+
+//TODO Finish API login
+
+//TODO Update all the pages/components by exporting them to index
 
 //Bonus: integrate fitbit API to app...Mostly showing for reactnative in examples??

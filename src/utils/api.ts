@@ -9,12 +9,8 @@ export function createUser(username: string, password: string): User {
     return newUser as User
 }
 
-
-
-
-
-export function signIn(username: string, password: string): User | undefined {
-    
+export function login(username: string, password: string): User | undefined {
+    return undefined
 }
 
 
