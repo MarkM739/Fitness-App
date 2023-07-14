@@ -49,11 +49,9 @@ function App() {
 export default App;
 
 
-//TODO Create Read me page github
+//TODO Load in workouts in all workout pages - Just add arrays.
 
-//TODO Load in workouts in all workout pages
-
-//TODO Style and flexbox each page to make sense for user experience 
+//TODO Style and flexbox each page with tailwind/DaisyUI
 
 //TODO Fix measurements page too add correctly 
 
