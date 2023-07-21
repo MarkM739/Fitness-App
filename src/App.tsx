@@ -7,7 +7,8 @@ import { workoutLoader } from "./loaders/workoutLoader";
 import BodyMeasurementsPage from "./pages/BodyMeasurementsPages";
 import ProfilePage from "./pages/ProfilePage";
 import Homepage from "./pages/Homepage";
-import SignupLogin from "./pages/SignupLogin";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
 
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
         { path: "/workouts", element: <Workouts />, loader: workoutLoader },
         { path: "/measurements", element: <BodyMeasurementsPage /> },
         { path: "/routines", element: <Routines /> },
-        { path: "/login", element: <SignupLogin />},
+        { path: "/login", element: <LoginPage />},
+        { path: "/signup", element: <SignupPage />},
       ],
     },
   ]);

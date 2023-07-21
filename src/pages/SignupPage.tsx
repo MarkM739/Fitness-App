@@ -8,7 +8,7 @@ type User = {
 };
 
 
-const SignupLogin: React.FC = () => {
+const SignupPage: React.FC = () => {
   const currentUser = useUser();
   const userDispatch = useUserDispatch();
 
@@ -68,4 +68,4 @@ const SignupLogin: React.FC = () => {
  
 };
 
-export default SignupLogin;
+export default SignupPage;
