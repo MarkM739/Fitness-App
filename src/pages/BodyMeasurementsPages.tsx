@@ -1,11 +1,12 @@
 import { useContext, useEffect } from "react";
 import BodyMeasurementsForm from "../components/BodyMeasurementsForm";
-import { UserContext } from "../contexts/UserContext";
+import { useUser, useUserDispatch } from '../hooks/user';
 
 
 const BodyMeasurementsPage = () =>{
+    const currentUser = useUser();
+    const userDispatch = useUserDispatch()
 
-    const [currentUser, setCurrentUser] = useContext(UserContext)
    //@ts-ignore
     const handleMeasurementsSubmit = (date: Date, measurements: BodyMeasurements) => {
         if (!currentUser) {
@@ -16,22 +17,25 @@ const BodyMeasurementsPage = () =>{
         const key = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` //TODO: Documentation Javascript Dates.
         console.log(`Body measurement date: ${key}`)
 
-        setCurrentUser({
-            ...currentUser,
-            measurements: {
-                ...currentUser.measurements,
-                [key]: measurements
-            }
-        })
+        // TODO Trigger a 'addMeasurement' action here, pass along the measurements
+
+        
+        // setCurrentUser({
+        //     ...currentUser,
+        //     measurements: {
+        //         ...currentUser.measurements,
+        //         [key]: measurements
+        //     }
+        // })
      };
 
-     useEffect(() => {
-        if (currentUser) {
-          localStorage.setItem("user", JSON.stringify(currentUser));
-        }
-      }, [currentUser]);
+    //  useEffect(() => {
+    //     if (currentUser) {
+    //       localStorage.setItem("user", JSON.stringify(currentUser));
+    //     }
+    //   }, [currentUser]);
 
-    console.log(`userContext: ${JSON.stringify(currentUser)}`);
+    // console.log(`userContext: ${JSON.stringify(currentUser)}`);
 
 
 return (

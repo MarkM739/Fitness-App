@@ -10,8 +10,14 @@ export function createUser(username: string, password: string): User {
 }
 
 export function login(username: string, password: string): User | undefined {
-    return undefined
+    const users: User[] = JSON.parse(localStorage.getItem('Users') || '[]')
+
+    const user = users.find(user => user.username === username && user.password === password)
+    
+    return user
 }
 
-
+export function logout(username: string) {
+    //TODO implement this
+}
 

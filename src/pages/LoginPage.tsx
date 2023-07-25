@@ -10,7 +10,8 @@ const LoginPage: React.FC = () => {
 
   const handleLogin = () => {
     const user = api.login(username, password);
-
+    
+  //TODO *Conditional Rendering* Add a logout button when the user is signed in instead of showing login.
     if (!user) {
       setLoginError(true);
       return;
@@ -21,7 +22,7 @@ const LoginPage: React.FC = () => {
       user: user,
     });
   };
-
+ 
   return (
     <div>
       <h2>Login</h2>

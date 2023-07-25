@@ -1,5 +1,9 @@
 import React from 'react';
 
+//TODO Create a different homepage for users that are already signed in 
+
+//TODO Take signup button off navbar, put something like "Get Started" as a button that takes u to sign up
+
 const Homepage: React.FC = () => {
   return (
     <div className="homepage container mx-auto">
