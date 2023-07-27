@@ -17,3 +17,9 @@ export function userReducer(state: User | null, action: any) {
     }
 
 }
+const Homepage: React.FC = () => {
+    const initialState: User | null = null; // Assuming your initial state for the user is null
+  
+    // Set up the userReducer and the user state using the useReducer hook
+    const [user, dispatch] = useReducer(userReducer, initialState);
+  
