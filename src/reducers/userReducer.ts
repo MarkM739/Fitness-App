@@ -12,14 +12,33 @@ export function userReducer(state: User | null, action: any) {
             return action.user
         }
         case 'addMeasure': {
-            return 
+            if (!state) {
+              return state;
+            }
+      
+            const { date, measurements } = action;
+      
+            //TODO Got this from ChatGPT.....not too sure how it works. ASK DEV
+            const updatedUser = {
+              ...state,
+              measurements: {
+                ...state.measurements,
+                [date]: measurements,
+              },
+            };
+      
+            return updatedUser;
+          }
+          default:
+            return state;
         }
-    }
+      }
+    
 
-}
+
 const Homepage: React.FC = () => {
     const initialState: User | null = null; // Assuming your initial state for the user is null
   
     // Set up the userReducer and the user state using the useReducer hook
     const [user, dispatch] = useReducer(userReducer, initialState);
-  
+}

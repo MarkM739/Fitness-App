@@ -16,6 +16,15 @@ const BodyMeasurementsPage = () =>{
         // Update the current user's measurements for the given date
         const key = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}` //TODO: Documentation Javascript Dates.
         console.log(`Body measurement date: ${key}`)
+        console.log('Measurements submitted:', measurements);
+
+        
+
+        userDispatch({
+            type: 'addMeasure',
+            date: key,
+            measurements: measurements,
+          });
 
         // TODO Trigger a 'addMeasurement' action here, pass along the measurements
 
