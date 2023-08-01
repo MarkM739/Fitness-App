@@ -42,3 +42,4 @@ const Homepage: React.FC = () => {
     // Set up the userReducer and the user state using the useReducer hook
     const [user, dispatch] = useReducer(userReducer, initialState);
 }
+
